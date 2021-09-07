@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1::after{
+            content:"";
+            animation: anim 2s linear 0s infinite  ;
+        }
+
+        @keyframes anim {
+            0%{content:"j"}
+            10%{content:"ja"}
+            20%{content:"jai"}
+            30%{content:"jai s"}
+            40%{content:"jai si"}
+            50%{content:"jai sin"}
+            60%{content:"jai sing"}
+            70%{content:"jai singh"}
+            80%{content:"jai singh ra"}
+            90%{content:"jai singh ratho"}
+            100%{content:"jai singh rathore"}
+        }
+
+      
+    </style>
+</head>
+<body>
+
+    <h1></h1>
+
+    <div style="width:100%;height:100vh;display: flex;justify-content: center;align-items: center;">
+        <div style="width:300px;height:300px;border:1px solid black;display: flex;flex-wrap: wrap;">
+        
+            <div  onclick="single(0)" oncontextmenu="double(0)" style="width:98px;height:98px;background-color:antiquewhite;border:1px solid black"></div>
+            <div onclick="single(1)"  oncontextmenu="double(1)"  style="width:98px;height:98px;background-color:antiquewhite;border:1px solid black"></div>
+            <div onclick="single(2)"  oncontextmenu="double(2)"  style="width:98px;height:98px;background-color:antiquewhite;border:1px solid black"></div>
+            <div onclick="single(3)"  oncontextmenu="double(3)" style="width:98px;height:98px;background-color:antiquewhite;border:1px solid black"></div>
+            <div onclick="single(4)"  oncontextmenu="double(4)" style="width:98px;height:98px;background-color:antiquewhite;border:1px solid black"></div>
+            <div onclick="single(5)"  oncontextmenu="double(5)" style="width:98px;height:98px;background-color:antiquewhite;border:1px solid black"></div>
+            <div onclick="single(6)"  oncontextmenu="double(6)" style="width:98px;height:98px;background-color:antiquewhite;border:1px solid black"></div>
+            <div onclick="single(7)"  oncontextmenu="double(7)" style="width:98px;height:98px;background-color:antiquewhite;border:1px solid black"></div>
+            <div onclick="single(8)"  oncontextmenu="double(8)" style="width:98px;height:98px;background-color:antiquewhite;border:1px solid black"></div>
+        
+        </div>
+    </div>    
+
+
+
+    <script>
+
+        let o=[];
+        let x=[];
+
+        const ckeck = 
+        {
+        one:[0, 1, 2],
+        two:[3, 4, 5],
+        three:[6, 7, 8],
+        four:[0, 3, 6],
+        five:[1, 4, 7],
+        six:[2, 5, 8],
+        seven:[0, 4, 8],
+        eight:[2, 4, 6]
+        };
+
+     
+        const single = (val) => {
+            o.push(val);
+
+            const aaa=Object.values(ckeck).map((val)=>{
+            if(val[0]==o[0] && val[1]==o[1] && val[2]==o[2]){
+                console.log("0 win");
+            }
+        });
+
+
+
+        }
+
+        const double = (val) => {
+            x.push(val);
+            console.log(x)
+            const aaa=Object.values(ckeck).map((val)=>{
+                if(val[0]==x[0] && val[1]==x[1] && val[2]==x[2]){
+                console.log("x win");
+            }
+        });
+
+        }
+
+
+    </script>
+</body>
+</html>

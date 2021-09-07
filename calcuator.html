@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width:100%;border:1px solid black;height:100vh;display: flex;justify-content: center;align-items: center;">
+        <div style="height:400px;width:300px;background-color:grey;border-radius: 10px;">
+            <div style="width:100%;height:100px">
+                <input style="height:100%;width:292px">
+                </div>
+
+                <div class="inp" style="width:100%;height:300px;display: flex;flex-wrap: wrap;justify-content: center;align-content: center">
+                    <button onclick="clicky('+')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">+</button>
+                    <button onclick="clicky('-')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">-</button>
+                    <button onclick="clicky('*')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">*</button>
+                    <button onclick="clicky('/')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">/</button>
+                    <button onclick="clicky('1')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">1</button>
+                    <button onclick="clicky('2')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">2</button>
+                    <button onclick="clicky('3')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">3</button>
+                    <button onclick="clicky('4')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">4</button>
+                    <button onclick="clicky('5')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">5</button>
+                   <button onclick="clicky('6')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">6</button>
+                   <button onclick="clicky('7')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">7</button>
+                   <button onclick="clicky('8')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">8</button>
+                   <button onclick="clicky('9')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">9</button>
+                   <button onclick="clicky('0')" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">0</button>
+                   <button onclick="clea()" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">clr</button>
+                   <button onclick="submi()" style="background-color: white;width:50px;border:1px solid black;height:50px;display: grid;place-items: center;">go</button>
+                </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        let init='';
+        let answer=''
+        const clicky = (val) => {
+            init+=val
+      document.querySelector('input').value=init;
+        }
+
+        const clea = () => {
+        init='';
+        document.querySelector('input').value='';
+        }
+
+        const submi = () => {
+        answer=eval(init);
+        document.querySelector('.inp').insertAdjacentHTML('beforebegin',`<h4>${answer}</h4>`);
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@500&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .partyOver{
+            margin-top: 10px;color:white;font-weight:bold;background-color:black;border-radius:4px;padding:14px 30px;border:none;margin-bottom: 30px;
+        }
+        .partyBegin{
+            margin-top: 10px;color:white;font-weight:bold;background-color:green;border-radius:4px;padding:14px 30px;border:none;margin-bottom: 30px;
+            
+        }
+    </style>
+</head>
+<body style="margin:0;font-family: 'Yanone Kaffeesatz', sans-serif;">
+
+    <div style="background-color: #E1695F;width:100%;min-height:100vh;display:flex;align-items:center;flex-direction:column">
+        
+    <h1 style="text-align:center;letter-spacing:14px;margin-top: 0px;padding-top: 20px;">Local Clock</h1>
+        
+        <h1 style="margin:0">I CAN HAZ TIME?</h1>
+        <h1 id="time">5:24:32 PM!</h1>
+    
+
+        <img src="https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg">
+
+        
+
+        
+        
+        <h2 style="margin-top: 50px;" >SET WAKE UP TIME</h2>
+    <select onchange="changi(event)" name="wakeUpTime" id="wakeUpTimeSelector">
+      <option value="1">1 AM - 2AM</option>
+      <option value="2">2 AM - 3AM</option>
+      <option value="3">3 AM - 4AM</option>
+      <option value="4">4 AM - 5AM</option>
+      <option value="5">5 AM - 6AM</option>
+      <option value="6">6 AM - 7AM</option>
+      <option value="7">7 AM - 8AM</option>
+      <option value="8" selected>8 AM - 9AM</option>
+      <option value="9">9 AM - 10AM</option>
+      <option value="10">10 AM - 11AM</option>
+      <option value="11">11 AM - 12PM</option>
+      <option value="12">12 PM - 1PM</option>
+      <option value="13">1 PM - 2PM</option>
+      <option value="14">2 PM - 3PM</option>
+      <option value="15">3 PM - 4PM</option>
+      <option value="16">4 PM - 5PM</option>
+      <option value="17">5 PM - 6PM</option>
+      <option value="18">6 PM - 7PM</option>
+      <option value="19">7 PM - 8PM</option>
+      <option value="20">8 PM - 9PM</option>
+      <option value="21">9 PM - 10PM</option>
+      <option value="22">10 PM - 11PM</option>
+      <option value="23">11 PM - 12AM</option>
+      <option value="24">12 AM - 1AM</option>
+    </select>
+    <br>
+    
+
+
+    <h2 style="margin-top: 0px;" >SET LUNCH TIME</h2>
+      <select onchange="changi(event)" name="lunchTime" id="lunchTimeSelector">
+        <option value="1">1 AM - 2AM</option>
+        <option value="2">2 AM - 3AM</option>
+        <option value="3">3 AM - 4AM</option>
+        <option value="4">4 AM - 5AM</option>
+        <option value="5">5 AM - 6AM</option>
+        <option value="6">6 AM - 7AM</option>
+        <option value="7">7 AM - 8AM</option>
+        <option value="8">8 AM - 9AM</option>
+        <option value="9">9 AM - 10AM</option>
+        <option value="10">10 AM - 11AM</option>
+        <option value="11">11 AM - 12PM</option>
+        <option value="12" selected>12 PM - 1PM</option>
+        <option value="13">1 PM - 2PM</option>
+        <option value="14">2 PM - 3PM</option>
+        <option value="15">3 PM - 4PM</option>
+        <option value="16">4 PM - 5PM</option>
+        <option value="17">5 PM - 6PM</option>
+        <option value="18">6 PM - 7PM</option>
+        <option value="19">7 PM - 8PM</option>
+        <option value="20">8 PM - 9PM</option>
+        <option value="21">9 PM - 10PM</option>
+        <option value="22">10 PM - 11PM</option>
+        <option value="23">11 PM - 12AM</option>
+        <option value="24">12 AM - 1AM</option>
+      </select>
+    <br>
+    
+    
+    <h2 style="margin-top: 0px;" >SET NAP TIME</h2>
+    <select onchange="changi(event)" name="napTime" id="napTimeSelector">
+      <option value="1">1 AM - 2AM</option>
+      <option value="2">2 AM - 3AM</option>
+      <option value="3">3 AM - 4AM</option>
+      <option value="4">4 AM - 5AM</option>
+      <option value="5">5 AM - 6AM</option>
+      <option value="6">6 AM - 7AM</option>
+      <option value="7">7 AM - 8AM</option>
+      <option value="8">8 AM - 9AM</option>
+      <option value="9">9 AM - 10AM</option>
+      <option value="10">10 AM - 11AM</option>
+      <option value="11">11 AM - 12PM</option>
+      <option value="12">12 PM - 1PM</option>
+      <option value="13">1 PM - 2PM</option>
+      <option value="14">2 PM - 3PM</option>
+      <option value="15" selected>3 PM - 4PM</option>
+      <option value="16">4 PM - 5PM</option>
+      <option value="17">5 PM - 6PM</option>
+      <option value="18">6 PM - 7PM</option>
+      <option value="19">7 PM - 8PM</option>
+      <option value="20">8 PM - 9PM</option>
+      <option value="21">9 PM - 10PM</option>
+      <option value="22">10 PM - 11PM</option>
+      <option value="23">11 PM - 12AM</option>
+      <option value="24">12 AM - 1AM</option>
+      </select>
+
+        <button onclick="changeImg()" class="partyOver"  >PARTY TIME!</button>
+
+    </div>
+
+
+    <script>
+
+        let FinalTime={
+            wakeUpTime:"",
+            lunchTime:"",
+            napTime:""
+        }
+
+        let partyTime=false;
+
+
+        function data(){
+            const date = new Date();
+            const time={
+        hours:date.getHours(),
+        minutes:date.getMinutes(),
+        seconds:date.getSeconds()
+                    }
+                    return time;
+        }
+
+
+
+        setInterval(()=>{
+                    const time=data();
+                    document.querySelector("#time").innerText=`${time.hours}:${time.minutes}:${time.seconds} ${time.hours>=12?'PM!':'AM!'}`
+                },1000)   
+                const changeImg = () =>{
+                    partyTime = !partyTime;
+
+                    if(partyTime){
+                    document.querySelector('img').src='https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg';
+                    document.querySelector('button').className='partyBegin';
+                    document.querySelector('button').innerText ='PARTY OVER !';
+                                }else{
+                    document.querySelector('button').className='partyOver';
+                    document.querySelector('button').innerText ='PARTY TIME !';
+                    changi(event);
+                                }
+                }
+
+
+
+        
+            let newDate = new Date();
+            let newHour=newDate.getHours();
+
+            function changi(event){
+                FinalTime[event.target.name] = event.target.value;
+
+
+                if(Number(FinalTime.wakeUpTime)===Number(newHour)){
+                    document.querySelector('img').src='https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg';
+                }else if(Number(FinalTime.lunchTime)===Number(newHour)){
+                    document.querySelector('img').src='https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg';
+                }else if(Number(FinalTime.napTime)===Number(newHour)){
+                    document.querySelector('img').src='https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg';
+                }
+
+                }
+
+                
+
+
+
+    </script>
+
+</body>
+</html>

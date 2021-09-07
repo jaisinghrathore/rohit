@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="jai" >
+    <button type="button" onclick="clicky()">add</button>
+
+  <ul></ul>
+
+
+    <script>
+
+        var item=[];
+        
+        const simpli = () =>{
+                   document.querySelector("ul").innerHTML="";
+                     for(var i=0;i<item.length;i++){                        
+                        let ele=document.createElement("li");
+                            let ele2=document.createElement("button");
+                            let itm=document.createTextNode(item[i].data);
+                            let itm2=document.createTextNode("remove");
+
+                            ele.appendChild(itm);
+                            ele2.appendChild(itm2);
+                            ele2.setAttribute("onclick",`clic(${item[i].id})`)
+                            ele.appendChild(ele2);
+                            document.querySelector("ul").appendChild(ele)
+                        }};
+
+        const clicky = () => {
+                const val = document.querySelector(".jai").value;
+                if(val.length > 0) {
+                    new Promise((resolve, reject) =>{
+                        item.push({id:item.length,data:val});
+                            resolve();
+                    }).then(()=>{
+                        document.querySelector(".jai").value='';
+                    }).then(()=>{        
+                          simpli();
+                    })
+                }else{
+                    console.log("write everything")
+                }
+        };
+
+        const clic = (id) => {
+           item = item.filter(value=>value.id !== id)
+                          simpli()};
+
+       
+
+    </script>
+</body>
+</html>

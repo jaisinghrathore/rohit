@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    .container {
+    height: 100vh;width: 100%;padding:20px 10px 10px 10px;display: flex;align-items: center;flex-direction: column;
+    }
+    .childContainer{
+        height:400px;width:60%;padding: 6px;border-radius: 10px;box-shadow: 2px 2px 2px 2px grey;margin-top: 30px;word-wrap: break-word;
+    }
+    ul{
+        list-style-type: none;
+    }
+    ul>li{
+        margin:30px 0;
+    }
+</style>
+
+</head>
+<body>
+    <div class="container">     
+        <div>
+    <input type="number" >
+    <button style="border:1px solid black">get user info</button><br>
+    <span style="color:red" class="error" ></span>
+        </div>
+
+        <div class="childContainer">
+            <h3 style="text-align:center;">Data's</h3>
+
+            <ul>
+                <li>id - </li> 
+                <li>first name - </li> 
+                <li>last name - </li> 
+                <li>email - </li> 
+                <li>avatar - </li> 
+            </ul>
+        </div>
+
+
+    </div>
+
+    <script>
+            $(document).ready(()=>{
+
+                $('button').click(()=>{     //button click event.
+                    const value=$('input').val();
+                    if(value.length==0){                          // input contains nothing.
+                    $('.error').text("This Field id Required!"); //generating error message
+                    }
+                    else if(value<1){
+                    $('.error').text("This Field shouldn't be negative!"); //generating error message
+                    }
+                    else if(value.length>0){     //if input contains some value then this condition work otherwise else works.
+                    $('.error').text("");   //clearing error message
+                    fetch(`https://reqres.in/api/users/${value}`).then(data=>{ //fetching data from given api
+                        return data.json();             // resolving promise and paring  ReadableStream to json                       
+                    }).then((parsedData)=>{
+                        $('li:nth-child(1)').text(`id -${parsedData.data.id}`);             
+                        $('li:nth-child(2)').text(`first name - ${parsedData.data.first_name}`);
+                        $('li:nth-child(3)').text(`last name - ${parsedData.data.last_name}`);
+                        $('li:nth-child(4)').text(`email -${parsedData.data.email}`);
+                        $('li:nth-child(5)').text(`avatar -${parsedData.data.avatar}`);
+                    }).catch((err)=>{
+                        alert("invalid network request");
+                    })
+                }
+                    $('input').val('');   
+                })
+
+            });
+    </script>
+</body>
+</html>

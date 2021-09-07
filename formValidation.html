@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./formValidation.js"></script>
+    <style>
+       .error{
+           margin-top: 2px;
+           color:red
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <form class="well form-horizontal"  id="contact_form" >
+    <fieldset>
+    
+    <!-- Form Name -->
+    <legend><h2><b>Registration Form</b></h2></legend><br>
+    
+    <!-- Text input-->
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label">First Name</label>  
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input  oninput="changi(event)" onblur="blurry(event)" name="first_name" placeholder="First Name" class="form-control"  type="text">
+      <p class="error one"></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" >Last Name</label> 
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input name="last_name"  oninput="changi(event)" onblur="blurry(event)" placeholder="Last Name" class="form-control"  type="text">
+      <p class="error two"></p>
+
+        </div>
+      </div>
+    </div>
+    
+      <div class="form-group"> 
+      <label class="col-md-4 control-label">Department / Office</label>
+        <div class="col-md-4 selectContainer">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+        <select  oninput="changi(event)" onblur="blurry(event)" name="department" class="form-control selectpicker">
+          <option value="">Select your Department/Office</option>
+          <option>Department of Engineering</option>
+          <option>Department of Agriculture</option>
+          <option >Accounting Office</option>
+          <option >Tresurer's Office</option>
+          <option >MPDC</option>
+          <option >MCTC</option>
+          <option >MCR</option>
+          <option >Mayor's Office</option>
+          <option >Tourism Office</option>
+        </select>
+      <p class="error three"></p>
+
+      </div>
+    </div>
+    </div>
+      
+    <!-- Text input-->
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label">Username</label>  
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input oninput="changi(event)" onblur="blurry(event)" name="user_name" placeholder="Username" class="form-control"  type="text">
+      <p class="error four"></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" >Password</label> 
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input oninput="changi(event)" onblur="blurry(event)" name="user_password" placeholder="Password" class="form-control"  type="password">
+      <p class="error five"></p>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" >Confirm Password</label> 
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input oninput="changi(event)" onblur="blurry(event)" name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password">
+      <p class="error six"></p>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- Text input-->
+           <div class="form-group">
+      <label class="col-md-4 control-label">E-Mail</label>  
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <input oninput="changi(event)" onblur="blurry(event)" name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+      <p class="error seven"></p>
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Text input-->
+           
+    <div class="form-group">
+      <label class="col-md-4 control-label">Contact No.</label>  
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+      <input oninput="changi(event)" onblur="blurry(event)" name="contact_no" placeholder="(+91)" class="form-control" type="text">
+      <p class="error eight"></p>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- Select Basic -->
+    
+    <!-- Success message -->
+    <div class="alert alert-success" role="alert" id="success_message"></div>
+    
+    <!-- Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label"></label>
+      <div class="col-md-4"><br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" onclick="sub()" class="btn btn-warning " >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+      </div>
+    </div>
+    
+    </fieldset>
+    </form>
+    </div>
+        </div><!-- /.container -->
+</body>
+</html>
